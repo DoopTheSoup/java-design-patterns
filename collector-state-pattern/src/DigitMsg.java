@@ -1,4 +1,8 @@
+import lombok.Getter;
+
 public class DigitMsg {
+    @Getter private String producer;
+    @Getter private int id;
     int pointer = 0;
     String[] digits = new String[]{"a","b","c","test","words"};
 
