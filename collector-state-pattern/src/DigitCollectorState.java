@@ -4,7 +4,8 @@ public class DigitCollectorState {
     int receivedDigits;
     final int expectedDigits;
     final int minimumDigits;
-    @Getter String description;
+    @Getter
+    String description;
 
     public DigitCollectorState(int expectedDigits, int minimumDigits){
         this.expectedDigits = expectedDigits;
@@ -36,8 +37,4 @@ public class DigitCollectorState {
             m.changeState(State.CallRoutingState);
         }
     }
-
-    // Producer-consumer Implementations
-
-
 }
