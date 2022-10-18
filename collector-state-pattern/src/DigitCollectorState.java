@@ -7,12 +7,14 @@ public class DigitCollectorState {
     @Getter
     String description;
 
+    //Initialisation
     public DigitCollectorState(int expectedDigits, int minimumDigits){
         this.expectedDigits = expectedDigits;
         this.minimumDigits = minimumDigits;
         this.description = String.format("Expected Digits: %d, Minimum Digits: %d", expectedDigits, minimumDigits);
     }
 
+    // Change State depending on collection progress
     public void onDigit(StateMachine m, DigitMsg message){
         m.digits[receivedDigits++] = message.getDigit();
 
@@ -24,11 +26,12 @@ public class DigitCollectorState {
         }
 
     }
-
+    // Restart timer
     void restartDigitTimer(){
         receivedDigits = 0;
     }
 
+    // Change state on timeout
     void onDigitTimeout(StateMachine m){
         if (receivedDigits < minimumDigits){
             m.changeState(State.PartialDialingState);

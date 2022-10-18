@@ -1,17 +1,20 @@
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class MsgQueue {
-
+    //Create queue for producer-consumer
     private LinkedBlockingQueue<DigitMsg> queue;
 
+    //Initialise size of queue
     public MsgQueue(){
         queue = new LinkedBlockingQueue<>(5);
     }
 
+    // Adding to the queue
     public void put(DigitMsg digitMsg) throws InterruptedException{
         queue.put(digitMsg);
     }
 
+    // Taking from the queue
     public DigitMsg take() throws InterruptedException{
         return queue.take();
     }

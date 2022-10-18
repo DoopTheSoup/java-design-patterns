@@ -6,11 +6,13 @@ public class Consumer {
     @Getter
     private DigitMsg msg;
 
+    // Initialise
     public Consumer(String name, MsgQueue queue){
         this.name = name;
         this.queue = queue;
     }
 
+    // Consumer consuming from the queue
     public void consume() throws InterruptedException{
         msg = queue.take();
         System.out.println(String.format("Consumer [%s] consume item [%s] produced by [%s]", name, msg.getId(), msg.getProducer()));

@@ -5,11 +5,13 @@ public class Producer {
     private final String name;
     private int msgId = 0;
 
+    // Initialise
     public Producer(String name, MsgQueue queue){
         this.name = name;
         this.queue = queue;
     }
 
+    // Producer adding to the queue
     public void produce() throws InterruptedException{
         DigitMsg msg = new DigitMsg();
         queue.put(msg);

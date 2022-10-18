@@ -15,7 +15,9 @@ public class App {
         Logger logger = Logger.getLogger("com.api.jar");
 
         MsgQueue queue = new MsgQueue();
+        // Create threads
         ExecutorService exService = Executors.newFixedThreadPool(5);
+        //Create producers and queue msg
         for (int i = 0; i < 2; i++){
             final Producer producer = new Producer("Producer_" + i, queue);
             exService.submit(() -> {
@@ -24,7 +26,7 @@ public class App {
                 }
             });
         }
-
+        //Create consumers and conduct digit collection on each msg
         for (int i = 0; i < 3; i++){
             final Consumer consumer = new Consumer("Consumer_" + i, queue);
             exService.submit(() -> {
