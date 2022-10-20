@@ -1,5 +1,9 @@
 import lombok.Getter;
 
+/**
+ * Consumer class consumes the message created by its producer
+ */
+
 public class Consumer {
     private final MsgQueue queue;
     private final String name;

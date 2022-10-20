@@ -1,5 +1,9 @@
 import lombok.Getter;
 
+/**
+ * Class that changes the state of the message
+ */
+
 public class DigitCollectorState {
     int receivedDigits;
     final int expectedDigits;

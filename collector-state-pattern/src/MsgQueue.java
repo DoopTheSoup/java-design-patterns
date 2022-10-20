@@ -1,5 +1,9 @@
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * Class that is responsible for the message queue
+ */
+
 public class MsgQueue {
     //Create queue for producer-consumer
     private LinkedBlockingQueue<DigitMsg> queue;

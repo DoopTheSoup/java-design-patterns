@@ -1,5 +1,9 @@
 import lombok.Getter;
 
+/**
+ * Class for a message containing digits
+ */
+
 public class DigitMsg {
     @Getter private String producer;
     @Getter private int id;

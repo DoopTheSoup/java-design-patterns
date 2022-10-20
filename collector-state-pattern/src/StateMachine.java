@@ -1,3 +1,6 @@
+/**
+ * Class that changes states
+ */
 public class StateMachine {
     State currentState;
     int capacity = 1000;

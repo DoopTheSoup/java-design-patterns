@@ -1,5 +1,9 @@
 import java.util.Random;
 
+/**
+ * Producer class that creates a unit of work (message) and submits it to the queue
+ */
+
 public class Producer {
     private final MsgQueue queue;
     private final String name;

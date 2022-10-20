@@ -3,6 +3,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Logger;
 
+/**
+ * Class that runs the collector state pattern
+ */
+
 public class App {
     public static void main(String[] args) {
         var expectedDigit = 8;
@@ -53,6 +57,7 @@ public class App {
             });
         }
 
+        //Terminates the thread
         exService.shutdown();
         try {
             exService.awaitTermination(10, TimeUnit.SECONDS);
