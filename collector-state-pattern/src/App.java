@@ -5,6 +5,24 @@ import java.util.logging.Logger;
 
 /**
  * Class that runs the collector state pattern
+ *
+ * The collector state pattern is used to handle scenarios where message collection is involved, where it would count
+ * the received messages and determine when the collection has been completed
+ * There are two key event handlers:
+ * - Collected Message Handler: This receives the collected messages and decides when the collection is completed. During collection, this handler
+ * activates a timer to track collection progress.
+ * - Timeout Handler: In an event of a timeout, this handler decides the status of message collection. A timeout might signal failure or a successful message
+ * collection.
+ *
+ * The Collector State pattern initiates a timer start for each new message collection, timer stop at each message collection, and state exit
+ * on timeout to a state. This implementation simulates a Call object needing to collect all the digits to perform call routing and will need a Call Routing state
+ * or Partial Dialing state.
+ *
+ * Implementation:
+ * - Start timeout of timeout size
+ * - Call digit collection method
+ * - Restart timer for next digit
+ * - Change state according to digit collection
  */
 
 public class App {
