@@ -1,3 +1,4 @@
+package main.java.com.iluwatar.collectorstate;
 import lombok.Getter;
 
 /**

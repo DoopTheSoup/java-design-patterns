@@ -1,3 +1,4 @@
+package main.java.com.iluwatar.collectorstate;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
